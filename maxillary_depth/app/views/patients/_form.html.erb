@@ -1,0 +1,39 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger fade show" role="alert">
+        <h6  class="alert-heading"><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h6>             
+        <ul>
+        <% patient.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+
+      </div>
+    </div>
+  <% end %>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>    
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= form.label :birthdate %>
+        <%= form.date_field :birthdate, class: "form-control" %>
+      </div>    
+    </div>
+  </div>  
+
+  
+  <div class="actions">
+    <%= form.submit nil, class: "btn btn-primary"  %>
+    <%= link_to 'Back', patients_path, class: "btn btn-secondary" %>    
+  </div>
+<% end %>

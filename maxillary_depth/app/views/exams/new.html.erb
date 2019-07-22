@@ -1,0 +1,73 @@
+<h1>New Exam</h1>
+
+<%= form_for @exam, url: patient_exams_path(@exam.patient_id), method: :post do |form| %>
+
+    <div class="row">
+      <div class="col-md-3">
+      <div class="form-inline">
+        <div class="form-group">
+          <%= form.label :point_n_x %>
+          <%= form.text_field :point_n_x, class: "form-control" %>
+        </div>    
+        <div class="form-group">
+          <%= form.label :point_n_y %>
+          <%= form.text_field :point_n_y, class: "form-control" %>
+        </div>    
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+      <div class="form-inline">
+        <div class="form-group">
+          <%= form.label :point_a_x %>
+          <%= form.text_field :point_a_x, class: "form-control" %>
+        </div>    
+        <div class="form-group">
+          <%= form.label :point_a_y %>
+          <%= form.text_field :point_a_y, class: "form-control" %>
+        </div>    
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-3">
+      <div class="form-inline">
+        <div class="form-group">
+          <%= form.label :point_po_x %>
+          <%= form.text_field :point_po_x, class: "form-control" %>
+        </div>    
+        <div class="form-group">
+          <%= form.label :point_po_y %>
+          <%= form.text_field :point_po_y, class: "form-control" %>
+        </div>    
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-3">
+      <div class="form-inline">
+        <div class="form-group">
+          <%= form.label :point_or_x %>
+          <%= form.text_field :point_or_x, class: "form-control" %>
+        </div>    
+        <div class="form-group">
+          <%= form.label :point_or_y %>
+          <%= form.text_field :point_or_y, class: "form-control" %>
+        </div>    
+        </div>
+      </div>
+    </div>
+
+    
+  <div class="actions">
+    <%= form.submit nil, class: "btn btn-primary"  %>
+    <%= link_to 'Back', patients_path, class: "btn btn-secondary" %>  
+  </div>  
+  <% end %>
+  

@@ -1,0 +1,43 @@
+
+
+<h1>Exam</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Point N</th>
+      <th>Point A</th>
+      <th>Point PO</th>
+      <th>Point OR</th>
+      <th>Maxillary Depth</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @exam.point_n.x %>, <%= @exam.point_n.y %></td>
+        <td><%= @exam.point_a.x %>, <%= @exam.point_a.y %></td>
+        <td><%= @exam.point_po.x %>, <%= @exam.point_po.y %></td>
+        <td><%= @exam.point_or.x %>, <%= @exam.point_or.y %></td>
+        <td><%= @exam.maxillary_depth_angle%></td>
+      </tr>
+  </tbody>
+</table>
+
+<%= javascript_tag do %>
+  window.point_n_x = "<%= @exam.point_n.x %>";
+  window.point_n_y = "<%= @exam.point_n.y %>";
+  window.point_a_x = "<%= @exam.point_a.x %>";
+  window.point_a_y = "<%= @exam.point_a.y %>";
+  window.point_po_x = "<%= @exam.point_po.x %>";
+  window.point_po_y = "<%= @exam.point_po.y %>";
+  window.point_or_x = "<%= @exam.point_or.x %>";
+  window.point_or_y = "<%= @exam.point_or.y %>";
+
+<% end %>
+
+
+    
+  <div class="actions">
+    <%= link_to 'Back', patient_path(@exam.patient_id), class: "btn btn-secondary", remote: true %>  
+  </div>  
+  

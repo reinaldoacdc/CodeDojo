@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+
+  db:
+    image: mysql:5.7    
+    environment:
+      MYSQL_ROOT_PASSWORD: "ge9kallen0"
+      MYSQL_DATABASE: maxillary_depth_development       
+    ports:
+      - "3306:3306"
+
+
+  rails:
+    build: .
+    entrypoint: ["./entry.sh"]
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/maxillary_depth
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    depends_on:
+      - db

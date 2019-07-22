@@ -1,0 +1,27 @@
+<% if flash[:notice] %>
+  <div class="alert alert-primary" role="alert">
+    <p id="notice"><%= notice %></p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @patient.birthdate %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient), class: "btn btn-secondary" %>
+<%= link_to 'Back', patients_path, class: "btn btn-secondary"  %>
+
+<%= link_to 'Add Exam', new_patient_exam_path(@patient), class: "btn btn-primary", remote: true %>
+
+<div class="patient_exam"> 
+    <%= render partial: 'exams', exams: @exams %>
+</div>

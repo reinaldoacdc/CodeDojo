@@ -1,0 +1,8 @@
+$( document ).ready(function(){ 
+    $(".notice").remove();
+    <% @exam.errors.full_messages.each do |message| %>
+        $("#noticeBlock").append("<div class='alert alert-danger fade show' role='alert'><%= escape_javascript(message)%></div>");
+    <% end %>
+
+    $("div.patient_exam").html("<%= escape_javascript(render partial: 'patients/exams', locals: { exams: @exams } ) %>");
+    } );

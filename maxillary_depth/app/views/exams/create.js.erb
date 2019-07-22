@@ -1,0 +1,3 @@
+$( document ).ready(function(){     
+    $("div.patient_exam").html("<%= escape_javascript(render partial: 'patients/exams', locals: { exams: @exams } ) %>");
+    } );

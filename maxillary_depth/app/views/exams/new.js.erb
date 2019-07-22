@@ -1,0 +1,3 @@
+$( document ).ready(function(){     
+    $("div.patient_exam").html("<%= escape_javascript(render partial: 'exams/form', locals: { exam: @exam, url: patient_exams_path(@exam.patient_id), method: :post } ) %>");
+    } );
