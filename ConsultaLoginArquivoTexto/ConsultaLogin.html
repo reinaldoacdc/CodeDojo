@@ -1,0 +1,85 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/consultalogin.css" rel="stylesheet">
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="logo.png" class="navbar-brand"  style="width:350px;height:100px;" ></img>
+    </div>
+	 <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+        <label id="lblConfig">Carregar Configuracao</label>
+		<br>
+		<input type="file" class="form-control" id="fileInput" >
+        </div>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div role="main" class="col-md-6 col-md-push-3">            		
+         <h1>Consulte seu Login e Senha de WIFI</h1>
+         <div class="input-group">
+         <input class="form-control" type="text" placeholder="Digite seu CPF" id="cpf" onKeyPress="MascaraCPF(cpf)" maxlength="14" />
+		 <div class="input-group-btn">
+			<button class="btn btn-default" type="submit" id="btnConsultar" onclick="Upload()">Consultar</button>
+		 </div>
+        </div>		
+    </div>
+
+
+	
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">By ReinaldoACDC</p>
+      </div>
+    </footer>	
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog" data-keyboard="true">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Anote seu login:</h4>
+      </div>
+      <div class="modal-body">
+	    <label id="lblErro" for="exemplo"></label>
+		<br>
+	    <label id="lblSenhaAP" for="exemplo"></label>
+		<br>
+        <label id="lblInfoLogin" for="exemplo"></label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" data-keyboard="true">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/consultalogin.js"></script>
+    <script src="js/mascaras.js"></script>
+</body>
+</html>
